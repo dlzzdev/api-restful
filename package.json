@@ -1,0 +1,41 @@
+{
+  "name": "api-restful-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --transpile-only --respawn src/app.ts",
+    "start": "ts-node src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlzzdev/api-restful.git"
+  },
+  "keywords": [],
+  "author": "dlzzdev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dlzzdev/api-restful/issues"
+  },
+  "homepage": "https://github.com/dlzzdev/api-restful#readme",
+  "dependencies": {
+    "config": "^3.3.7",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.0",
+    "morgan": "^1.10.0",
+    "sequelize": "^6.19.0",
+    "sqlite3": "^5.0.6",
+    "winston": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/config": "^0.0.41",
+    "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.30",
+    "@types/sqlite3": "^3.1.8",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.4"
+  }
+}
