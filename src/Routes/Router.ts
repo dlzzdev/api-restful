@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { createUser, findUserById, getAllUsers } from "../controllers/userControllers";
+import { createUser, findUserById, getAllUsers, removeUser } from "../controllers/userControllers";
 import { validate } from "../middleware/handleValidation";
 import { userCreateValidation } from "../middleware/userValidation";
 
@@ -12,3 +12,4 @@ export default router
   .post("/users", userCreateValidation(), validate, createUser)
   .get("/users/:id", findUserById)
   .get("/users", getAllUsers)
+  .delete("/users/:id", removeUser);
