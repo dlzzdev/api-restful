@@ -1,7 +1,16 @@
 import { Router, Request, Response } from "express";
-import { createUser, findUserById, getAllUsers, removeUser, updateUser } from "../controllers/userControllers";
+import {
+  createUser,
+  findUserById,
+  getAllUsers,
+  removeUser,
+  updateUser,
+} from "../controllers/userControllers";
 import { validate } from "../middleware/handleValidation";
-import { userCreateValidation, userEditValidation } from "../middleware/userValidation";
+import {
+  userCreateValidation,
+  userEditValidation,
+} from "../middleware/userValidation";
 
 const router = Router();
 
