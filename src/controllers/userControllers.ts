@@ -57,3 +57,24 @@ export async function removeUser(req: Request, res: Response) {
     res.status(500).json({ message: "Internal server error" });
   }
 }
+
+export async function updateUser(req: Request, res: Response) {
+  try {
+    const id = req.params.id;
+    const user = await User.findOne({ where: { id: id } });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    const { username, email, password } = req.body;
+    const newPassword = await generateHash(password);
+    await user.update({
+      username,
+      email,
+      password: newPassword,
+    });
+    res.status(200).json({ message: `User id ${id} has been updated` });
+  } catch (e: any) {
+    Logger.error(e.message);
+    res.status(500).json({ message: "Internal server error" });
+  }
+}
