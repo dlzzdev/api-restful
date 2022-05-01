@@ -1,4 +1,5 @@
 import { Sequelize } from "sequelize";
+import Logger from "../../config/logger";
 
 const db = new Sequelize({
   dialect: "sqlite",
@@ -9,10 +10,10 @@ const db = new Sequelize({
 export async function connection(database: Sequelize) {
   db.authenticate()
     .then(() => {
-      console.log("Connection has been established successfully.");
+      Logger.info("Connection has been established successfully.");
     })
     .catch((err) => {
-      console.error("Unable to connect to the database:", err);
+      Logger.error("Unable to connect to the database:", err);
       process.exit(1);
     });
 }
